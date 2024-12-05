@@ -1,0 +1,317 @@
+/* Intentionally chaotic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="18" font-size="20">🚀</text></svg>'), auto;
+}
+
+::selection {
+    background: #00ff00;
+    color: #ff00ff;
+}
+
+body {
+    font-family: 'Press Start 2P', 'Comic Sans MS', cursive;
+    background: #000 url('https://i.gifer.com/7HWE.gif') fixed;
+    color: #fff;
+    overflow-x: hidden;
+    animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 2px) }
+    40% { transform: translate(-2px, -2px) }
+    60% { transform: translate(2px, 2px) }
+    80% { transform: translate(2px, -2px) }
+    100% { transform: translate(0) }
+}
+
+/* Glitchy header */
+header {
+    text-align: center;
+    padding: 2rem;
+    background: repeating-linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ff00 10px,
+        #ff0000 20px,
+        #00ffff 30px,
+        #ffff00 40px
+    );
+    position: relative;
+    border: double 6px #ff00ff;
+    animation: borderColor 0.5s infinite;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.7;
+    animation: glitchOpacity 0.3s infinite;
+}
+
+@keyframes glitchOpacity {
+    0% { opacity: 0.7 }
+    50% { opacity: 0.3 }
+    100% { opacity: 0.7 }
+}
+
+.top-marquee {
+    background: #000;
+    color: #0f0;
+    padding: 15px;
+    font-size: 1.2em;
+    border: dashed 3px #0f0;
+    font-family: 'Comic Sans MS', cursive;
+    text-transform: uppercase;
+    animation: marqueeGlitch 0.3s infinite;
+}
+
+@keyframes marqueeGlitch {
+    0% { transform: skew(0deg) }
+    25% { transform: skew(2deg) }
+    75% { transform: skew(-2deg) }
+    100% { transform: skew(0deg) }
+}
+
+.glowing-text {
+    font-size: 4em;
+    position: relative;
+    color: #fff;
+    text-shadow: 3px 3px 0 #ff00ff,
+                -3px -3px 0 #00ff00;
+    animation: textGlitch 0.3s infinite;
+    letter-spacing: 5px;
+}
+
+@keyframes textGlitch {
+    0% { transform: translate(0) }
+    25% { transform: translate(5px, 0) skew(10deg) }
+    50% { transform: translate(-5px, 0) skew(-10deg) }
+    75% { transform: translate(0, 5px) skew(5deg) }
+    100% { transform: translate(0) }
+}
+
+/* Glitchy feature boxes */
+.feature-box {
+    border: solid 3px #0f0;
+    padding: 2rem;
+    text-align: center;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    animation: boxGlitch 1s infinite;
+}
+
+@keyframes boxGlitch {
+    0% { border-style: solid; border-color: #0f0; }
+    25% { border-style: dashed; border-color: #ff0; }
+    50% { border-style: dotted; border-color: #f0f; }
+    75% { border-style: double; border-color: #0ff; }
+    100% { border-style: solid; border-color: #0f0; }
+}
+
+.feature-box:hover {
+    animation: boxShake 0.1s infinite;
+}
+
+@keyframes boxShake {
+    0% { transform: translate(0) rotate(0) }
+    25% { transform: translate(5px, 5px) rotate(2deg) }
+    50% { transform: translate(-5px, -5px) rotate(-2deg) }
+    75% { transform: translate(-5px, 5px) rotate(2deg) }
+    100% { transform: translate(0) rotate(0) }
+}
+
+/* Glitchy buy button */
+.buy-button {
+    background: #f00;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    animation: buttonGlitch 0.3s infinite;
+}
+
+@keyframes buttonGlitch {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    25% { clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 95%); }
+    50% { clip-path: polygon(0 5%, 100% 0, 95% 100%, 5% 95%); }
+    75% { clip-path: polygon(0 0, 95% 5%, 100% 95%, 5% 100%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+.buy-button:hover {
+    animation: buttonShake 0.1s infinite;
+}
+
+/* Glitchy meme grid */
+.meme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    animation: gridGlitch 2s infinite;
+}
+
+@keyframes gridGlitch {
+    0% { gap: 1rem; }
+    25% { gap: 0.8rem; }
+    50% { gap: 1.2rem; }
+    75% { gap: 0.9rem; }
+    100% { gap: 1rem; }
+}
+
+.meme-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: solid 5px #f0f;
+    filter: contrast(120%) brightness(110%);
+    transition: all 0.1s;
+}
+
+.meme-grid img:hover {
+    animation: imageGlitch 0.2s infinite;
+    filter: hue-rotate(360deg) contrast(150%) brightness(120%);
+}
+
+@keyframes imageGlitch {
+    0% { transform: translate(0) scale(1) }
+    25% { transform: translate(5px, -5px) scale(1.05) skew(2deg) }
+    50% { transform: translate(-5px, 5px) scale(0.95) skew(-2deg) }
+    75% { transform: translate(5px, 5px) scale(1.05) skew(-2deg) }
+    100% { transform: translate(0) scale(1) }
+}
+
+/* Social links with glitch effect */
+.social-links a {
+    color: #0f0;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.5em;
+    padding: 10px;
+    border: dashed 2px #0f0;
+    margin: 10px;
+    display: inline-block;
+    animation: linkGlitch 1s infinite;
+}
+
+@keyframes linkGlitch {
+    0% { border-style: dashed; transform: translate(0) }
+    25% { border-style: solid; transform: translate(2px, -2px) }
+    50% { border-style: dotted; transform: translate(-2px, 2px) }
+    75% { border-style: double; transform: translate(2px, 2px) }
+    100% { border-style: dashed; transform: translate(0) }
+}
+
+/* Random color flashes */
+@keyframes colorFlash {
+    0% { background-color: transparent; }
+    95% { background-color: transparent; }
+    96% { background-color: #ff00ff; }
+    97% { background-color: transparent; }
+    98% { background-color: #00ff00; }
+    99% { background-color: transparent; }
+    100% { background-color: #ff0000; }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    animation: colorFlash 10s infinite;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+}
+
+/* Cookie popup styles */
+.cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    border: 3px solid #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    font-family: 'Comic Sans MS', cursive;
+    animation: float 2s infinite ease-in-out;
+    max-width: 90%;
+    width: 500px;
+}
+
+.cookie-popup::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 400% 400%;
+    animation: gradient 3s linear infinite;
+    z-index: -1;
+}
+
+.cookie-content {
+    text-align: center;
+}
+
+.cookie-content p {
+    color: #00ff00;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.5);
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+    background: #000;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.cookie-buttons button:hover {
+    background: #00ff00;
+    color: #000;
+    transform: scale(1.1) rotate(2deg);
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0) rotate(2deg); }
+    25% { transform: translate(5px) rotate(-2deg); }
+    50% { transform: translate(0) rotate(2deg); }
+    75% { transform: translate(-5px) rotate(-2deg); }
+    100% { transform: translate(0) rotate(2deg); }
+} 
